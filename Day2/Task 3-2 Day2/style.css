@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #a0ecd2;
+}
+
+
+.first-ol {
+    list-style-type: disc;
+    color: blue;
+}
+
+.second-ol {
+    list-style-type: lower-alpha;
+    color: green;
+}
+
+.first-ul {
+    list-style-type: decimal;
+    color: red;
+}
+.second-ul {
+    list-style-type: georgian;
+    color: purple;
+}
