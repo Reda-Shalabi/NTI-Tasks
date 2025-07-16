@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body class="pt-5 bg-dark text-light">
+  <div class="container">
+    <table class="table table-bordered table-striped mb-5">
+      <thead>
+        <tr>
+          <th scope="col" class="bg-danger text-light">#</th>
+          <th scope="col" class="bg-dark text-light">Name</th>
+          <th scope="col" class="bg-dark text-light">Email</th>
+          <th scope="col" class="bg-dark text-light">Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Reda Shalabi</td>
+          <td>redavd12@gmail.com</td>
+          <td>Developer</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Ahmed AbuBakr</td>
+          <td>Ahmed@gmail.com</td>
+          <td>Admin</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Kareim Sayed</td>
+          <td>Kareim@gmail.com</td>
+          <td>Eng</td>
+        </tr>
+      </tbody>
+    </table>
+            <button type="button" class="btn btn-success px-5 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Read More</button>
+          <hr>
+
+    <form class="row was-validated ">
+      <div class="col-md-4">
+        <label for="validationServer01" class="form-label">Name</label>
+        <input type="text" class="form-control mb-3" id="validationServer01" required>
+        <div class="valid-feedback">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationServerUsername" class="form-label">Id</label>
+
+        <input type="tel" class="form-control mb-5" id="validationServerUsername"
+          aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+
+        </div>
+      </div>
+      <div class="col-md-5">
+        <label for="validationServer03" class="form-label">Email</label>
+        <input type="email" class="form-control mb-5 " id="validationServer03"
+          aria-describedby="validationServer03Feedback" required>
+        <div id="validationServer03Feedback" class="invalid-feedback">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationServer02" class="form-label ">Telephone Number</label>
+        <input type="tel" class="form-control mb-5" id="validationServer02" required>
+        <div class="valid-feedback">
+
+        </div>
+      </div>
+
+
+      <div>
+        <button class="btn btn-success mx-3 px-5" type="submit ">Submit</button>
+
+      </div>
+    </form>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Notifications</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body bg-dark text-light">
+            <ul>
+              <li>You Must Fill All Fields Of The Form</li>
+              <li>You Must Write Email As "Examble@g.c"</li>
+              <li>YouMust Write Correct Data</li>
+            </ul>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        <script src="js/bootstrap.js"></script>
+</body>
+
+</html>
