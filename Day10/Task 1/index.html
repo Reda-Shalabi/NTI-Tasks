@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>api</title>
+</head>
+<body>
+
+<script>
+fetch("http://localhost/Day10/Task 1/api_test.php")
+  .then(response => {
+   return response.json()
+  })
+  .then(data => {
+    if(data.connection){
+        data.data.forEach( item =>{
+            console.log(item);
+        })
+    }else{
+        alert(data.message);
+    }
+
+    })
+    </script>
+
+</body>
+</html>
+
