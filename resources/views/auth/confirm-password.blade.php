@@ -41,7 +41,7 @@
 </style>
 
 <div class="glass-box">
-  <h3 class="text-center mb-4">🔒 Confirm Password</h3>
+  <h3 class="text-center mb-4"> Confirm Password</h3>
 
   <p class="text-center text-light mb-4">
     This is a secure area of the application. <br>

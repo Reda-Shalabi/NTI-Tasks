@@ -3,18 +3,20 @@
 namespace App\Providers;
 
 use App\Models\Article;
+use App\Models\Comment;
 use App\Policies\ArticlePolicy;
+use App\Policies\CommentPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
-    // Register the Article policy
-    // app/Providers/AuthServiceProvider.php
-
+    /**
+     * تسجيل الـ policies للـ models
+     */
     protected $policies = [
-        \App\Models\Article::class => \App\Policies\ArticlePolicy::class,
+        Article::class => ArticlePolicy::class,
+        Comment::class => CommentPolicy::class,
     ];
-
 
     public function boot(): void
     {

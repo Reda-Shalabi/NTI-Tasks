@@ -14,9 +14,27 @@ class Article extends Model
     // Fields that can be mass assigned (filled from forms)
     protected $fillable = ['title', 'body', 'user_id'];
 
-    // Relationship: Each article belongs to one user (author)
+    /**
+     * كل article ينتمي لـ user (الكاتب)
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * كل article يقدر يكون له كتير top-level comments
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->whereNull('parent_id')->with('user', 'replies');
+    }
+
+    /**
+     * اجيب جميع الـ top-level comments فقط
+     */
+    public function topLevelComments()
+    {
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
 }

@@ -47,7 +47,7 @@
 </style>
 
 <div class="glass-box">
-  <h3 class="text-center mb-4">📝 Create an Account</h3>
+  <h3 class="text-center mb-4"> Create an Account</h3>
 
   @if ($errors->any())
     <div class="alert alert-danger">

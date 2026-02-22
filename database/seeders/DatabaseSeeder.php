@@ -8,34 +8,31 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-public function run(): void
-{
-    // Create admin user
-    User::firstOrCreate(
-        ['email' => 'admin@example.com'],
-        [
-            'name' => 'Admin User',
-            'password' => bcrypt('admin123'),
-            'email_verified_at' => now(),
-        ]
-    );
-
-    // Create regular users
-    User::factory(5)->create()->each(function ($user) {
-        // Create 2-5 articles per user
-        $user->articles()->createMany(
-            Article::factory()->count(rand(2, 5))->make()->toArray()
+    public function run(): void
+    {
+        // إنشاء مستخدم أدمن
+        User::firstOrCreate(
+            ['email' => 'admin@example.com'],
+            [
+                'name' => 'Admin User',
+                'password' => bcrypt('admin123'),
+                'email_verified_at' => now(),
+                'role' => 'admin',
+            ]
         );
-    });
 
-    // Create featured articles
-    Article::factory(3)->create([
-        'title' => 'Featured: ' . fake()->sentence(),
-        'body' => fake()->paragraphs(3, true),
-    ]);
+        // إنشاء مستخدمين عاديين
+        User::factory(5)->create(['role' => 'user'])->each(function ($user) {
+            // إنشاء 2-5 مقالات لكل مستخدم
+            $user->articles()->createMany(
+                Article::factory()->count(rand(2, 5))->make()->toArray()
+            );
+        });
+
+        // إنشاء مقالات متميزة
+        Article::factory(3)->create([
+            'title' => 'مقالة متميزة: ' . fake()->sentence(),
+            'body' => fake()->paragraphs(3, true),
+        ]);
+    }
 }
-
-
-}
-
-Article::factory()->featured()->count(3)->create();

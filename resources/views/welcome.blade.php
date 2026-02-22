@@ -47,16 +47,16 @@
 </style>
 
 <div class="welcome-glass-box">
-    <h1>👋 Welcome to the Articles App</h1>
-    <p class="lead">Laravel + Bootstrap simple app to manage articles.</p>
+    <h1> Welcome to the Articles App</h1>
+    <p class="lead"> Simple app to manage articles.</p>
     
     <div class="mt-4">
-        <a href="{{ route('articles.index') }}" class="btn btn-primary me-2">📄 View Articles</a>
+        <a href="{{ route('articles.index') }}" class="btn btn-primary me-2"> View Articles</a>
         
         @auth
-            <a href="{{ route('articles.create') }}" class="btn btn-success">✍️ Create Article</a>
+            <a href="{{ route('articles.create') }}" class="btn btn-success"> Create Article</a>
         @else
-            <a href="{{ route('login') }}" class="btn btn-outline-primary">🔐 Login</a>
+            <a href="{{ route('login') }}" class="btn btn-outline-primary"> Login</a>
         @endauth
     </div>
 </div>

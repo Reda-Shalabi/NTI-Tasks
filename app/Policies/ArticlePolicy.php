@@ -4,24 +4,32 @@ namespace App\Policies;
 
 use App\Models\Article;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class ArticlePolicy
 {
-   // app/Policies/ArticlePolicy.php
-public function update(User $user, Article $article)
-{
-    return $user->id === $article->user_id;
-}
+    /**
+     * تحقق إذا كان اليوزر يقدر يعدّل الـ article
+     * فقط صاحب الـ article أو الـ admin
+     */
+    public function update(User $user, Article $article): bool
+    {
+        return $user->id === $article->user_id || $user->isAdmin();
+    }
 
-public function delete(User $user, Article $article)
-{
-    return $user->id === $article->user_id;
-}
+    /**
+     * تحقق إذا كان اليوزر يقدر يحذف الـ article
+     * فقط صاحب الـ article أو الـ admin
+     */
+    public function delete(User $user, Article $article): bool
+    {
+        return $user->id === $article->user_id || $user->isAdmin();
+    }
 
-public function create(User $user)
-{
-    return true;
-}
-
+    /**
+     * أي user مسجّل يقدر ينشئ article
+     */
+    public function create(User $user): bool
+    {
+        return true;
+    }
 }

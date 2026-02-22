@@ -81,7 +81,7 @@
             <h4>{{ $article->title }}</h4>
             <p>{{ Str::limit($article->body, 120) }}</p>
             <p style="font-size: 0.9rem;" class="text-muted">
-                ✍️ By {{ $article->user->name ?? 'Unknown' }}
+                 By {{ $article->user->name ?? 'Unknown' }}
             </p>
 
             <div class="d-flex">

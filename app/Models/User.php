@@ -9,12 +9,6 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-
-    // Relationship: Each user can have many articles
-public function articles()
-{
-    return $this->hasMany(Article::class);
-}
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
@@ -27,7 +21,32 @@ public function articles()
         'name',
         'email',
         'password',
+        'role',
     ];
+
+    /**
+     * كل user يقدر يكون له كتير articles
+     */
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
+    /**
+     * كل user يقدر يكون له كتير comments
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * تحقق إذا كان اليوزر أدمن
+     */
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 
     /**
      * The attributes that should be hidden for serialization.
